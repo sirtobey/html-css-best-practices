@@ -2,5 +2,6 @@
 
 _TBD_
 
+1. Use border-box
 1. Do not use calc
-2. _TBD_
+1. _TBD_
