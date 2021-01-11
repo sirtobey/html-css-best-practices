@@ -140,7 +140,7 @@ NOTE: _The elements here are aligned with `display: flex`. More on that later._
 
 As you can see, the elements are positioned neatly in the corners, both having a nice margin towards the borders of their container. This will make your customers and designers rejoice!
 
-## Best Practice #1
+## Best Practice #1 - When padding, when margin
 
 _'But Toby,'_ you might ask, _'aren't `margin` and `padding` interchangeable?'_
 
@@ -150,3 +150,15 @@ You might be able to achieve the same look by using either of those properties o
 Imagine the example above with two elements: If those are buttons, you will want to separate them from the background somehow. Either with a nice `border` if you are stuck in 2005, or by adding a nice background color if you're stuck in 2016.
 
 So, what's the big deal? Well, margins don't have background colors. Good luck trying to color your button when you used a `margin` instead of a `padding`...
+
+## Best Practice #2 - No self-margins on components!
+
+Components don't need to set their own margins more often than not. And you usually don't want them to! It's always easier to set a margin in the parent element. This way, you can set it, when you need it. Setting margins on components will drastically reduce how easily you can reuse them!
+
+## Best Practice #3 - Let the elements grow
+
+A good rule of thumb is to _not set_ a `height` and `width` on your components. Often a `min-width` and `min-height` make sense. But if you allow your element to grow as much as possible by the parent it is contained it, you are very flexible in reusing such elements (components) whereever you like.
+
+To be fair, if you have a button, that is the same height everywhere, it's probably relatively safe to define it as that height.
+
+But let's assume we build a card layout. If we want to reuse it in different sizes, we limit the size in the parent component. This is particularly useful, when using `flex` or `grid` layouts, as we can resize our elements however we please, and we never have to change anything in our components!
